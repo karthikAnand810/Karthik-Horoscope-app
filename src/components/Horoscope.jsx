@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getHoroscopeData } from "../services/api";
+import { Card } from 'primereact/card';
 export const Horoscope = ({ data }) => {
     const [horoscope, setHoroscope] = useState([]);
     // const current = new Date();
@@ -20,17 +21,30 @@ export const Horoscope = ({ data }) => {
     useEffect(() => {
         getHoroscopeData(data.sign, data.day).then(setHoroscope);
     }, [data.sign, data.day]);
-    
+
+    const footer = (
+        <span>
+            Thank You
+        </span>
+    );
+
+
     return (
+        // <div>
+        //     <h1>{data.date}</h1>
+        //     <h1>{data.name}</h1>
+        //     <h1>{data.email}</h1>
+        //     <h2>
+        //         {data.day}, You'r Horoscope for {data.sign} is...
+        //     </h2>
+        //     <p>{horoscope}</p>
+        // </div>
+
         <div>
-            <h1>{data.date}</h1>
-            <h1>{data.name}</h1>
-            <h1>{data.email}</h1>
-            <h2>
-                {data.day}, You'r Horoscope for {data.sign} is...
-            </h2>
-            <p>{horoscope}</p>
-            
+            <div className='header' style={{ width: "250px", height: "100px" }} />
+            <Card title={data.day} subTitle={`Your Horoscope for ${data.sign} is`} footer={footer} className="horoscope-data">
+                <p className="m-0" style={{ lineHeight: '1.5', textAlign: "justify" }}>{horoscope}</p>
+            </Card>
         </div>
     )
 }

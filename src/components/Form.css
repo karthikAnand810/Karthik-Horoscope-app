@@ -1,16 +1,25 @@
+
+/* FormDemo.css */
+
 .form-demo .card {
-    min-width: 450px;
+    margin: auto;
+    max-width: 660px;
 }
 .form-demo .card form {
-    margin-top: 2rem;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 30px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .form-demo .card .field {
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 }
 @media screen and (max-width: 960px) {
     .form-demo .card {
-        width: 80%;
+        width: 100%;
     }
+    
 }
 @media screen and (max-width: 640px) {
     .form-demo .card {
@@ -18,15 +27,33 @@
         min-width: 0;
     }
 }
+             
 .sign{
     text-transform: capitalize;
+    
 }
 .form-card
 {
     padding: 5px;
-    margin: 0px 120px;
 }
 .sign-select
 {
     margin-bottom: 20px;
 }
+.header
+{
+    text-align: center;
+    
+}
+.form-demo h4
+{
+    color: wheat;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+/* let Style={height:"560px",
+    width: "240px",
+    marginBottom:"50px"} */

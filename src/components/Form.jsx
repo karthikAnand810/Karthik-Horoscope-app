@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { classNames } from 'primereact/utils';
+import { Image } from 'primereact/image';
 import './Form.css';
 import { SelectButton } from 'primereact/selectbutton';
 import { getSigns } from '../services/api';
@@ -10,6 +11,8 @@ import { getSigns } from '../services/api';
 export const Form = ({ formFilled }) => {
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+    const sunSign1 = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo'];
+    const sunSign2 = ['libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
     const timeFrame = ['yesterday', 'today', 'tomorrow'];
     const [signs, setSigns] = useState([])
 
@@ -58,13 +61,16 @@ export const Form = ({ formFilled }) => {
 
     return (
         <div className="form-demo">
+            <div className='header'><Image src="../horoscope.png" alt="Image" width="250" />
+                <h4>Horoscope App</h4>
+            </div>
 
             <div className="flex justify-content-center ">
                 <div className="card form-card">
-                    <h5 className="text-center">Horoscope App</h5>
                     <form onSubmit={formik.handleSubmit} className="p-fluid">
                         <div className="field">
-                            <span className="p-float-label">
+                            <span className="p-float-label p-input-icon-left">
+                                <i className='pi pi-user'></i>
                                 <InputText id="name" name="name" value={formik.values.name} onChange={formik.handleChange} autoFocus className={classNames({ 'p-invalid': isFormFieldValid('name') })} />
                                 <label htmlFor="name" className={classNames({ 'p-error': isFormFieldValid('name') })}>Name*</label>
                             </span>
@@ -87,13 +93,23 @@ export const Form = ({ formFilled }) => {
                             </span>
 
                         </div>
-                        <div className="sign-select">
-                            <SelectButton id="sign" name="sign" key={signs} options={signs} value={formik.values.sign} onChange={formik.handleChange} />
+
+                        <label htmlFor="sign">Select Sign</label>
+                        <div className="sign-select sign text-center">
+                            {/* <div>
+                                <SelectButton id="sign" name="sign" key={signs} options={signs} value={formik.values.sign} onChange={formik.handleChange} style={{ gap: "10px" }} />
+                            </div> */}
+                            <div>
+                                <SelectButton id="sign" name="sign" key={signs} options={sunSign1} value={formik.values.sign} onChange={formik.handleChange} style={{ marginBottom: "10px" }} />
+                            </div>
+                            <div>
+                                <SelectButton id="sign" name="sign" key={signs} options={sunSign2} value={formik.values.sign} onChange={formik.handleChange} />
+                            </div>
                         </div>
 
-                        <div className='sign'>
-                            <SelectButton id="day" name="day" key={timeFrame} options={timeFrame} value={formik.values.day} onChange={formik.handleChange} />
-
+                        <div className='sign sign-select'>
+                            <label htmlFor="sign" >Select Timeframe</label>
+                            <SelectButton id="day" name="day" key={timeFrame} options={timeFrame} value={formik.values.day} onChange={formik.handleChange} style={{ gap: "10px" }} />
                         </div>
 
 
