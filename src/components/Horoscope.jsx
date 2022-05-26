@@ -50,6 +50,10 @@ export const Horoscope = ({ data }) => {
                     <label style={{ paddingRight: "5px" }}>Email Id:</label>
                     <h4 style={{ display: "inline-block" }}>{data.email}</h4>
                 </div>
+                <div style={{ marginBottom: "-31px" }}>
+                    <label style={{ paddingRight: "5px" }}>Today's Date:</label>
+                    <h4 style={{ display: "inline-block" }}>{data.date}</h4>
+                </div>
                 <div style={{ textTransform: "capitalize", }}>
                     <h2>{data.day}</h2>
                     <h4 style={{ marginTop: "-20px" }}>{`Your Horoscope for ${data.sign} is`}</h4>
