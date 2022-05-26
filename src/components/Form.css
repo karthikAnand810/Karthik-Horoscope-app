@@ -3,7 +3,7 @@
 
 .form-demo .card {
     margin: auto;
-    max-width: 660px;
+    max-width: 670px;
 }
 .form-demo .card form {
     border-radius: 5px;
@@ -30,7 +30,6 @@
              
 .sign{
     text-transform: capitalize;
-    
 }
 .form-card
 {
@@ -38,7 +37,7 @@
 }
 .sign-select
 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .header
 {
@@ -53,6 +52,7 @@
     margin-top: 0px;
     margin-bottom: 2px;
 }
+
 
 /* let Style={height:"560px",
     width: "240px",

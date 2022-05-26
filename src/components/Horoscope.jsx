@@ -42,7 +42,18 @@ export const Horoscope = ({ data }) => {
 
         <div>
             <div className='header' style={{ width: "250px", height: "100px" }} />
-            <Card title={data.day} subTitle={`Your Horoscope for ${data.sign} is`} footer={footer} className="horoscope-data">
+            <Card footer={footer} className="horoscope-data">
+                <div style={{ marginBottom: "-31px" }}>
+                    <label style={{ paddingRight: "5px" }}>Name of The User:</label><h4 style={{ display: "inline-block" }}>{data.name}</h4>
+                </div>
+                <div style={{ marginBottom: "-31px" }}>
+                    <label style={{ paddingRight: "5px" }}>Email Id:</label>
+                    <h4 style={{ display: "inline-block" }}>{data.email}</h4>
+                </div>
+                <div style={{ textTransform: "capitalize", }}>
+                    <h2>{data.day}</h2>
+                    <h4 style={{ marginTop: "-20px" }}>{`Your Horoscope for ${data.sign} is`}</h4>
+                </div>
                 <p className="m-0" style={{ lineHeight: '1.5', textAlign: "justify" }}>{horoscope}</p>
             </Card>
         </div>

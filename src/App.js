@@ -12,8 +12,10 @@ function App() {
   const [formData, setFormData] = useState(null);
 
   const restart = () => {
+    
     setFormData(null)
   }
+
   return (
     <div className="App">
 
@@ -21,7 +23,7 @@ function App() {
       }
       {formData && <Horoscope data={formData} />
       }
-      <Button label="Reset" onClick={restart} className="p-button-rounded p-button-warning" style={{ display: "block", margin: "10px auto" }} />
+      <Button label="Go Back" onClick={restart} className="p-button-rounded p-button-warning" style={{ display: "block", margin: "10px auto" }} />
 
     </div>
   );

@@ -11,8 +11,9 @@ import { getSigns } from '../services/api';
 export const Form = ({ formFilled }) => {
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
-    const sunSign1 = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo'];
-    const sunSign2 = ['libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
+    const sunSign1 = ['aries', 'taurus', 'gemini', 'cancer'];
+    const sunSign2 = ['leo', 'virgo', 'libra', 'scorpio',];
+    const sunSign3 = ['sagittarius', 'capricorn', 'aquarius', 'pisces']
     const timeFrame = ['yesterday', 'today', 'tomorrow'];
     const [signs, setSigns] = useState([])
 
@@ -61,7 +62,7 @@ export const Form = ({ formFilled }) => {
 
     return (
         <div className="form-demo">
-            <div className='header'><Image src="../horoscope.png" alt="Image" width="250" />
+            <div className='header'><Image src="../horoscope.png" alt="Image" width="230" />
                 <h4>Horoscope App</h4>
             </div>
 
@@ -94,16 +95,17 @@ export const Form = ({ formFilled }) => {
 
                         </div>
 
-                        <label htmlFor="sign">Select Sign</label>
-                        <div className="sign-select sign text-center">
-                            {/* <div>
-                                <SelectButton id="sign" name="sign" key={signs} options={signs} value={formik.values.sign} onChange={formik.handleChange} style={{ gap: "10px" }} />
-                            </div> */}
+                        <div className="sign-select sign ">
+                            <label htmlFor="sign">Select Sign</label>
                             <div>
-                                <SelectButton id="sign" name="sign" key={signs} options={sunSign1} value={formik.values.sign} onChange={formik.handleChange} style={{ marginBottom: "10px" }} />
+                                <SelectButton id="sign" name="sign" key={signs} options={sunSign1} value={formik.values.sign} onChange={formik.handleChange} style={{ marginBottom: "10px" }} className="sun-sign-lable" />
                             </div>
                             <div>
-                                <SelectButton id="sign" name="sign" key={signs} options={sunSign2} value={formik.values.sign} onChange={formik.handleChange} />
+                                <SelectButton id="sign" name="sign" key={signs} options={sunSign2} value={formik.values.sign} onChange={formik.handleChange}
+                                    style={{ marginBottom: "10px" }} />
+                            </div>
+                            <div>
+                                <SelectButton id="sign" name="sign" key={signs} options={sunSign3} value={formik.values.sign} onChange={formik.handleChange} />
                             </div>
                         </div>
 

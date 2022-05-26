@@ -18,4 +18,5 @@ div .horoscope-data
 .p-card .p-card-subtitle
 {
   color: wheat !important;
+  text-transform: capitalize;
 }
